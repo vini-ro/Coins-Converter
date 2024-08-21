@@ -14,8 +14,8 @@ struct ContentView: View {
     @State  var leftAmout = ""
     @State  var rightAmout = ""
     
-    @State var leftCurrency = Currency.silverPiece
-    @State var rightCurrency = Currency.goldPiece
+    @State var leftCurrency: Currency = .silverPiece
+    @State var rightCurrency: Currency = .goldPiece
     
     var body: some View {
         ZStack{
