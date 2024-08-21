@@ -36,14 +36,3 @@ struct CurrencyIcon: View {
 #Preview {
     CurrencyIcon(currencyImage: .goldpiece, currencyName: "Gold Piece")
 }
-
-
-//                    CurrencyIcon(currencyImage: .copperpenny, currencyName: "Copper Penny")
-//
-//                    CurrencyIcon(currencyImage: .silverpenny, currencyName: "Silver Penny")
-//
-//                    CurrencyIcon(currencyImage: .silverpiece, currencyName: "Silver Piece")
-//
-//                    CurrencyIcon(currencyImage: .goldpenny, currencyName: "Gold Penny")
-//
-//                    CurrencyIcon(currencyImage: .goldpiece, currencyName: "Gold Piece")

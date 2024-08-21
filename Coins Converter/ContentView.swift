@@ -14,6 +14,9 @@ struct ContentView: View {
     @State  var leftAmout = ""
     @State  var rightAmout = ""
     
+    @FocusState var leftTyping
+    @FocusState var rightTyping
+    
     @State var leftCurrency: Currency = .silverPiece
     @State var rightCurrency: Currency = .goldPiece
     
@@ -62,6 +65,9 @@ struct ContentView: View {
                         // Textfield
                         TextField("Amount", text: $leftAmout)
                             .textFieldStyle(.roundedBorder)
+                            .focused($leftTyping)
+                            .keyboardType(.decimalPad)
+                            
                         
                         
                     }
@@ -99,6 +105,9 @@ struct ContentView: View {
                         TextField("Amount", text: $rightAmout)
                             .textFieldStyle(.roundedBorder)
                             .multilineTextAlignment(.trailing)
+                            .focused($rightTyping)
+                            .keyboardType(.decimalPad)
+                            
                     }
                 }
                 .padding()
@@ -120,9 +129,29 @@ struct ContentView: View {
                         Image(systemName: "info.circle.fill")
                             .font(.largeTitle)
                             .foregroundStyle(.white)
+                        }
+                    .padding(.trailing)
+                    
+                    .onChange(of: rightAmout) {
+                        if rightTyping {
+                            leftAmout = rightCurrency.convert(rightAmout, to: leftCurrency)
+                        }
                         
                     }
-                    .padding(.trailing)
+                    .onChange(of: leftAmout) {
+                        if leftTyping == true {
+                            rightAmout = leftCurrency.convert(leftAmout, to: rightCurrency)
+                        }
+                    }
+                    .onChange(of: leftCurrency) {
+                        leftAmout = rightCurrency.convert(rightAmout, to: leftCurrency)
+
+                    }
+                    .onChange(of: rightCurrency) {
+                        rightAmout = leftCurrency.convert(leftAmout, to: rightCurrency)
+
+                    }
+                    
                     .sheet(isPresented: $showExchangeInfo){
                         ExchangeInfo()
                     }
@@ -132,7 +161,6 @@ struct ContentView: View {
                 }
                 
             }
-            //            .border(.blue)
             
         }
         
