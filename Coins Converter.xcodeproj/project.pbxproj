@@ -11,6 +11,7 @@
 		810CB0B72C76202100B3CBF4 /* CurrencyIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810CB0B62C76202100B3CBF4 /* CurrencyIcon.swift */; };
 		810CB0B92C7628F500B3CBF4 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810CB0B82C7628F500B3CBF4 /* Currency.swift */; };
 		810CB0BB2C7636E400B3CBF4 /* IconGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810CB0BA2C7636E400B3CBF4 /* IconGrid.swift */; };
+		810CB0BD2C765AA700B3CBF4 /* CurrencyTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810CB0BC2C765AA700B3CBF4 /* CurrencyTip.swift */; };
 		81CF77E62C75132800ACA807 /* Coins_ConverterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF77E52C75132800ACA807 /* Coins_ConverterApp.swift */; };
 		81CF77E82C75132800ACA807 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF77E72C75132800ACA807 /* ContentView.swift */; };
 		81CF77EA2C75132B00ACA807 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81CF77E92C75132B00ACA807 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		810CB0B62C76202100B3CBF4 /* CurrencyIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyIcon.swift; sourceTree = "<group>"; };
 		810CB0B82C7628F500B3CBF4 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		810CB0BA2C7636E400B3CBF4 /* IconGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconGrid.swift; sourceTree = "<group>"; };
+		810CB0BC2C765AA700B3CBF4 /* CurrencyTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTip.swift; sourceTree = "<group>"; };
 		81CF77E22C75132800ACA807 /* Coins Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coins Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81CF77E52C75132800ACA807 /* Coins_ConverterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coins_ConverterApp.swift; sourceTree = "<group>"; };
 		81CF77E72C75132800ACA807 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				810CB0B62C76202100B3CBF4 /* CurrencyIcon.swift */,
 				81CF77F32C752D3400ACA807 /* ExchangeInfo.swift */,
 				81CF77F52C7531D400ACA807 /* ExchangeRate.swift */,
+				810CB0BC2C765AA700B3CBF4 /* CurrencyTip.swift */,
 				81CF77E92C75132B00ACA807 /* Assets.xcassets */,
 				81CF77EB2C75132B00ACA807 /* Preview Content */,
 			);
@@ -160,6 +163,7 @@
 				810CB0B52C76181B00B3CBF4 /* SelectCurrency.swift in Sources */,
 				81CF77F42C752D3400ACA807 /* ExchangeInfo.swift in Sources */,
 				81CF77E82C75132800ACA807 /* ContentView.swift in Sources */,
+				810CB0BD2C765AA700B3CBF4 /* CurrencyTip.swift in Sources */,
 				81CF77E62C75132800ACA807 /* Coins_ConverterApp.swift in Sources */,
 				810CB0B92C7628F500B3CBF4 /* Currency.swift in Sources */,
 				810CB0B72C76202100B3CBF4 /* CurrencyIcon.swift in Sources */,

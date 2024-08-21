@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TipKit
 
 struct ContentView: View {
     @State  var showExchangeInfo = false
@@ -61,13 +62,14 @@ struct ContentView: View {
                         .onTapGesture {
                             showSelectCurrency.toggle()
                         }
+                        .popoverTip(CurrencyTip(), arrowEdge: .bottom)
                         
                         // Textfield
                         TextField("Amount", text: $leftAmout)
                             .textFieldStyle(.roundedBorder)
                             .focused($leftTyping)
                             .keyboardType(.decimalPad)
-                            
+                        
                         
                         
                     }
@@ -107,7 +109,7 @@ struct ContentView: View {
                             .multilineTextAlignment(.trailing)
                             .focused($rightTyping)
                             .keyboardType(.decimalPad)
-                            
+                        
                     }
                 }
                 .padding()
@@ -129,41 +131,41 @@ struct ContentView: View {
                         Image(systemName: "info.circle.fill")
                             .font(.largeTitle)
                             .foregroundStyle(.white)
-                        }
+                    }
                     .padding(.trailing)
-                    
-                    .onChange(of: rightAmout) {
-                        if rightTyping {
-                            leftAmout = rightCurrency.convert(rightAmout, to: leftCurrency)
-                        }
-                        
-                    }
-                    .onChange(of: leftAmout) {
-                        if leftTyping == true {
-                            rightAmout = leftCurrency.convert(leftAmout, to: rightCurrency)
-                        }
-                    }
-                    .onChange(of: leftCurrency) {
-                        leftAmout = rightCurrency.convert(rightAmout, to: leftCurrency)
-
-                    }
-                    .onChange(of: rightCurrency) {
-                        rightAmout = leftCurrency.convert(leftAmout, to: rightCurrency)
-
-                    }
-                    
-                    .sheet(isPresented: $showExchangeInfo){
-                        ExchangeInfo()
-                    }
-                    .sheet(isPresented: $showSelectCurrency){
-                        SelectCurrency(topCurrency: $leftCurrency, bottomCurrency: $rightCurrency)
-                    }
                 }
-                
+            }
+            //            .border(.blue)
+        }
+        .task {
+            try? Tips.configure()
+        }
+        .onChange(of: rightAmout) {
+            if rightTyping {
+                leftAmout = rightCurrency.convert(rightAmout, to: leftCurrency)
             }
             
         }
+        .onChange(of: leftAmout) {
+            if leftTyping == true {
+                rightAmout = leftCurrency.convert(leftAmout, to: rightCurrency)
+            }
+        }
+        .onChange(of: leftCurrency) {
+            leftAmout = rightCurrency.convert(rightAmout, to: leftCurrency)
+            
+        }
+        .onChange(of: rightCurrency) {
+            rightAmout = leftCurrency.convert(leftAmout, to: rightCurrency)
+            
+        }
         
+        .sheet(isPresented: $showExchangeInfo){
+            ExchangeInfo()
+        }
+        .sheet(isPresented: $showSelectCurrency){
+            SelectCurrency(topCurrency: $leftCurrency, bottomCurrency: $rightCurrency)
+        }
         
     }
 }
