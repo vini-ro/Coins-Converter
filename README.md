@@ -1,5 +1,7 @@
 # Coins Converter
 
+> 📚 Projeto de estudo desenvolvido durante o curso de iOS com Swift e SwiftUI (Udemy).
+
 **Coins Converter** é um aplicativo desenvolvido em SwiftUI que permite a conversão entre diferentes tipos de moedas fictícias inspiradas em um universo de fantasia. O projeto demonstra habilidades práticas em Swift e SwiftUI, abordando a criação de interfaces de usuário interativas e a manipulação de dados.
 
 ## Funcionalidades
@@ -32,7 +34,7 @@ O projeto é organizado em vários arquivos para manter uma boa estrutura e faci
 
 1. Clone o repositório para o seu ambiente local:
     ```sh
-    git clone https://github.com/seu-usuario/coins-converter.git
+    git clone https://github.com/vini-ro/Coins-Converter.git
     ```
 2. Abra o projeto no Xcode.
 3. Execute o aplicativo no simulador ou em um dispositivo físico.
